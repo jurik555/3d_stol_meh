@@ -1,0 +1,31 @@
+{
+  "_comment": "Все размеры в мм. Меняйте значения и пушьте — GitHub Action пересоберёт модель.",
+
+  "width": 300,
+  "board_t": 18,
+  "table_height_min": 600,
+  "travel": 150,
+  "top_length": 500,
+  "base_length": 500,
+
+  "spacer_w": 30,
+  "mast_t": 18,
+  "rack_t": 10,
+  "pawl_t": 8,
+  "clearance": 1,
+
+  "tooth_pitch": 10,
+  "tooth_depth": 5,
+
+  "cap_h": 60,
+  "flange_d": 120,
+  "flange_t": 4,
+  "rotation_deg": 90,
+
+  "gas_spring_length": 400,
+  "gas_spring_stroke": 150,
+  "gas_spring_body_d": 22,
+  "gas_spring_rod_d": 8,
+
+  "gusset": 100
+}

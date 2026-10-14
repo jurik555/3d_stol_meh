@@ -1,0 +1,69 @@
+name: Генерация 3D-модели
+
+on:
+  push:
+    paths:
+      - "generate.py"
+      - "params.json"
+      - "requirements.txt"
+      - ".github/workflows/generate.yml"
+  workflow_dispatch:
+    inputs:
+      width:
+        description: "Ширина досок, мм"
+        default: ""
+      table_height_min:
+        description: "Высота столешницы в нижнем положении, мм"
+        default: ""
+      travel:
+        description: "Ход подъёма, мм"
+        default: ""
+      top_length:
+        description: "Длина столешницы, мм"
+        default: ""
+      base_length:
+        description: "Длина основания, мм"
+        default: ""
+      board_t:
+        description: "Толщина фанеры, мм"
+        default: ""
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Системные библиотеки
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libgl1 libegl1
+
+      - name: Установка CadQuery
+        run: pip install -r requirements.txt
+
+      - name: Генерация
+        env:
+          IN_WIDTH: ${{ inputs.width }}
+          IN_TABLE_HEIGHT_MIN: ${{ inputs.table_height_min }}
+          IN_TRAVEL: ${{ inputs.travel }}
+          IN_TOP_LENGTH: ${{ inputs.top_length }}
+          IN_BASE_LENGTH: ${{ inputs.base_length }}
+          IN_BOARD_T: ${{ inputs.board_t }}
+        run: |
+          args=()
+          for k in width table_height_min travel top_length base_length board_t; do
+            var="IN_${k^^}"
+            v="${!var}"
+            if [ -n "$v" ]; then args+=(--set "$k=$v"); fi
+          done
+          python generate.py --out output "${args[@]}"
+          cat output/BOM.md >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sofa-table-model
+          path: output/
