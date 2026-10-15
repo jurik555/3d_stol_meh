@@ -13,6 +13,15 @@
 |---|---|---|
 | ![](docs/iso_high.png) | ![](docs/iso_rotated.png) | ![](docs/mechanism.png) |
 
+## Смотреть онлайн (3D, крутится мышью/пальцем)
+
+- [Нижнее положение](https://gltf-viewer.donmccurdy.com/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_low.glb)
+- [Верхнее положение](https://gltf-viewer.donmccurdy.com/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_high.glb)
+- [Верх, столешница отведена на 90°](https://gltf-viewer.donmccurdy.com/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_high_rotated.glb)
+
+GLB-файлы лежат в `models/` и обновляются Action'ом автоматически после каждого
+изменения параметров.
+
 ## Как работает механизм
 
 ![Рейка и собачка](docs/pawl_closeup.png)
