@@ -71,17 +71,17 @@ jobs:
           name: sofa-table-model
           path: output/
 
-      - name: Обновить GLB в models/ (для онлайн-просмотра)
+      - name: Обновить GLB/STEP в models/ (для онлайн-просмотра)
         if: github.event_name == 'push'
         run: |
           mkdir -p models
-          cp output/glb/*.glb models/
+          cp output/glb/*.glb output/step/*.step models/
           git config user.name "github-actions[bot]"
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
           git add models/
           if git diff --cached --quiet; then
-            echo "GLB не изменились"
+            echo "Модели не изменились"
           else
-            git commit -m "Обновить GLB-модели"
+            git commit -m "Обновить модели в models/"
             git push
           fi

@@ -15,11 +15,16 @@
 
 ## Смотреть онлайн (3D, крутится мышью/пальцем)
 
-- [Нижнее положение](https://gltf-viewer.donmccurdy.com/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_low.glb)
-- [Верхнее положение](https://gltf-viewer.donmccurdy.com/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_high.glb)
-- [Верх, столешница отведена на 90°](https://gltf-viewer.donmccurdy.com/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_high_rotated.glb)
+На [3dviewer.net](https://3dviewer.net), STEP с деревом деталей:
 
-GLB-файлы лежат в `models/` и обновляются Action'ом автоматически после каждого
+- [Нижнее положение](https://3dviewer.net/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_low.step)
+- [Верхнее положение](https://3dviewer.net/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_high.step)
+- [Верх, столешница отведена на 90°](https://3dviewer.net/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_high_rotated.step)
+
+Облегчённые GLB: [низ](https://3dviewer.net/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_low.glb) ·
+[верх](https://3dviewer.net/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_high.glb) · [повёрнута](https://3dviewer.net/#model=https://raw.githubusercontent.com/jurik555/3d_stol_meh/HEAD/models/assembly_high_rotated.glb)
+
+Файлы лежат в `models/` и обновляются Action'ом автоматически после каждого
 изменения параметров.
 
 ## Как работает механизм
